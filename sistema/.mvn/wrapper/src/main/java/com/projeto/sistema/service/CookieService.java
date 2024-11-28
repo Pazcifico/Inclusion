@@ -15,8 +15,10 @@ public class CookieService {
     public static void setCookie(HttpServletResponse response, String key, String valor, int segundos) throws UnsupportedEncodingException {
         Cookie cookie = new Cookie(key, URLEncoder.encode(valor, "UTF-8"));
         cookie.setMaxAge(segundos);
-        response.addCookie(cookie);  // Correção aqui para usar addCookie
+        cookie.setPath("/"); // Torna o cookie acessível em todas as rotas
+        response.addCookie(cookie);
     }
+    
 
     public static String getCookie(HttpServletRequest request, String key) throws UnsupportedEncodingException{
         String valor = Optional.ofNullable(request.getCookies())

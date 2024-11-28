@@ -30,15 +30,17 @@ public class LoginController {
 
     // Processar login e redirecionar
     @PostMapping("/logar")
-    public String loginUsuario(Usuario usuario, Model model, HttpServletResponse response) throws UnsupportedEncodingException {
-        Usuario usuarioLogado = usuarioRepository.login(usuario.getEmail(), usuario.getSenha());
-        if (usuarioLogado != null) {
-            CookieService.setCookie(response, "usuarioId", String.valueOf(usuarioLogado.getId()), 10000);
-            CookieService.setCookie(response, "nomeUsuario", usuarioLogado.getNome(), 10000);
-            return "redirect:/evento/criar"; // Redireciona para criação de eventos
-        }
-        model.addAttribute("erro", "Usuário inválido");
-        return "login";
+public String loginUsuario(Usuario usuario, Model model, HttpServletResponse response) throws UnsupportedEncodingException {
+    Usuario usuarioLogado = usuarioRepository.login(usuario.getEmail(), usuario.getSenha());
+    if (usuarioLogado != null) {
+        // Definir cookies com caminho correto
+        CookieService.setCookie(response, "usuarioId", String.valueOf(usuarioLogado.getId()), 10000);
+        CookieService.setCookie(response, "nomeUsuario", usuarioLogado.getNome(), 10000);
+        return "redirect:/usuario/perfil"; // Certifique-se de que esta rota exista
     }
+    model.addAttribute("erro", "Usuário inválido");
+    return "login";
+}
+
 }
 

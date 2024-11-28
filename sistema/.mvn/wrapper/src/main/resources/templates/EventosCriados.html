@@ -5,18 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos Criados</title>
     <link rel="stylesheet" href="../static/info_contato.css">
+    <style>
+        .edit-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+
+        .event-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .event-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .event-card p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="search-bar">
-            <img src="/img/image 25.png" alt="Logo" class="search-bar-img">
+            <img src="/img/image25.png" alt="Logo" class="search-bar-img">
             <input type="text" placeholder="Procurar eventos">
             <button>🔍</button>
         </div>
         <nav class="nav">
             <a href="/html/eventos.html">Eventos</a>
             <a href="/html/criar-evento.html">Criar um evento</a>
-            <a href="/html/info_contato.html">Usuario</a>
+            <a href="/html/info_contato.html">Usuário</a>
         </nav>
     </header>
 
@@ -24,21 +67,20 @@
         <aside class="quick-links">
             <ul>
                 <li><a href="/html/info_contato.html">Informações da Conta</a></li>
-                <li><a href="/html/eventos-criados.html" class="active">Eventos Criados</a></li>
+                <a th:href="@{/evento/meus?usuarioId=${usuario.id}}">Eventos Criados</a>
                 <li><a href="/html/eventos-inscritos.html">Eventos Inscritos</a></li>
             </ul>
         </aside>
         <section class="account-section">
-            <h1>Eventos Criados</h1>
             <div class="event-list">
-                <!-- Loop para exibir eventos -->
-                <div class="event-card">
-                    <h2>Nome do Evento</h2>
-                    <p><strong>Local:</strong> Local do evento</p>
-                    <p><strong>Data:</strong> 26/11/2024</p>
-                    <p><strong>Detalhes:</strong> Breve descrição do evento</p>
+                <!-- Iterando pelos eventos criados com Thymeleaf -->
+                <div th:each="evento : ${eventosCriados}" class="event-card">
+                    <h2 th:text="${evento.nome}">Nome do Evento</h2>
+                    <p><strong>Local:</strong> <span th:text="${evento.local}">Local do evento</span></p>
+                    <p><strong>Data:</strong> <span th:text="${#dates.format(evento.data, 'dd/MM/yyyy HH:mm')}">Data do evento</span></p>
+                    <p><strong>Detalhes:</strong> <span th:text="${evento.detalhes}">Descrição do evento</span></p>
+                    <a th:href="@{/evento/editar/{eventoId}(eventoId=${evento.id})}" class="edit-button">Editar</a>
                 </div>
-                <!-- Fim do loop -->
             </div>
         </section>
     </main>

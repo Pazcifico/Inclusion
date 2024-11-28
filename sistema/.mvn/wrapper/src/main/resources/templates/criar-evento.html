@@ -12,86 +12,77 @@
         <div class="cidade">
             <span id="guarambi-title">📍 Guanambi, BA</span>
         </div>
-        <div class="zoom-controls" aria-label="Controles de acessibilidade">
-            <button id="zoom-in" aria-label="Aumentar zoom">+</button>
-            <span>A |</span>
-            <button id="zoom-out" aria-label="Diminuir zoom">-</button>
-            <button class="contraste" aria-label="Alternar contraste">Contraste</button>
-        </div>
+    
     </header>
 
     <nav class="nav-bar">
         <div class="logo">
             <img src="logo.png" alt="Logo do site" class="imagem-logo">
         </div>
-        <div class="search-bar">
-            <input class="bar" type="text" name="searchbar" placeholder="Pesquisar Eventos" aria-label="Pesquisar eventos">
-        </div>
+        
         <ul class="nav-list">
             <li><a href="#" class="nav-link">Eventos</a></li>
-            <li><a href="#" class="nav-link">Criar um Evento</a></li>
-            <li><i class="fa-regular fa-circle-user" aria-hidden="true"></i></li>
-            <li><a href="#" class="nav-link">Nome do Usuário</a></li>
+           
+           
+            <li><a href="/perfil" class="nav-link">Perfil</a></li>
         </ul>
     </nav>
 
     <main>
-        <form id="eventForm" method="POST" action="/evento/criar">
-            <!-- Campo oculto com o ID do usuário -->
-            <input type="hidden" name="usuarioId" value="1"> <!-- Substitua "1" pelo ID dinâmico do usuário -->
+        <form id="eventForm" method="POST" action="/usuario/evento/criar">
+            <!-- Campo oculto com o ID do usuário, preenchido dinamicamente -->
+            <input type="hidden" name="usuarioId" value="${usuarioId}"> 
         
-            <label for="eventName">Nome do Evento:</label>
-            <input type="text" id="eventName" name="nome" required>
+            <div>
+                <label for="eventName">Nome do Evento:</label>
+                <input type="text" id="eventName" name="nome" required>
+            </div>
         
-            <label for="eventDateTime">Data e Hora do Evento:</label>
-            <input type="datetime-local" id="eventDateTime" name="data" required>
+            <div>
+                <label for="eventDateTime">Data e Hora do Evento:</label>
+                <input type="datetime-local" id="eventDateTime" name="data" required>
+            </div>
         
-            <label for="eventLocation">Localização:</label>
-            <input type="text" id="eventLocation" name="local" required>
+            <div>
+                <label for="eventLocation">Localização:</label>
+                <input type="text" id="eventLocation" name="local" required>
+            </div>
         
-            <label for="eventDetails">Detalhes:</label>
-            <textarea id="eventDetails" name="detalhes" required></textarea>
+            <div>
+                <label for="eventDetails">Detalhes:</label>
+                <textarea id="eventDetails" name="detalhes" required></textarea>
+            </div>
         
-            <label for="eventIngresso">Ingresso:</label>
-            <select id="eventIngresso" name="ingresso" required>
-                <option value="pago">Pago</option>
-                <option value="gratis">Grátis</option>
-            </select>
+            <div>
+                <label for="eventIngresso">Ingresso:</label>
+                <select id="eventIngresso" name="ingresso" required>
+                    <option value="pago">Pago</option>
+                    <option value="gratis">Grátis</option>
+                </select>
+            </div>
         
-            <label for="eventTipo">Tipo de Evento:</label>
-            <select id="eventTipo" name="tipoDeEvento" required>
-                <option value="pcd">PCD</option>
-                <option value="evento1">Tipo 1 Deficiência Física</option>
-                <option value="evento2">Tipo 2 Deficiência Auditiva</option>
-                <option value="evento3">Tipo 3 Deficiência Visual</option>
-                <option value="evento4">Tipo 4 Deficiência Intelectual</option>
-            </select>
+            <div>
+                <label for="eventTipo">Tipo de Evento:</label>
+                <select id="eventTipo" name="tipoDeEvento" required>
+                    <option value="pcd">PCD</option>
+                    <option value="evento1">Tipo 1 Deficiência Física</option>
+                    <option value="evento2">Tipo 2 Deficiência Auditiva</option>
+                    <option value="evento3">Tipo 3 Deficiência Visual</option>
+                    <option value="evento4">Tipo 4 Deficiência Intelectual</option>
+                </select>
+            </div>
         
             <button type="submit">Criar Evento</button>
         </form>
         
     </main>
 
-    <footer class="footer">
+    <footer>
         <div class="footer-content">
-            <div class="logo2">
-                <img src="/logo.png" alt="Logo do site" class="footer-img">
-            </div>
-            <nav class="footer-nav">
-                <h3>Menu</h3>
-                <ul>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Avaliar Serviços</a></li>
-                </ul>
-            </nav>
+            <p>&copy; 2024 Sistema de Inclusão e Acessibilidade</p>
         </div>
-        <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        </div>
-        <p>&copy; 2024 InclusiOn | Todos os direitos reservados.</p>
     </footer>
 
-    <script src="/js/criar-evento.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

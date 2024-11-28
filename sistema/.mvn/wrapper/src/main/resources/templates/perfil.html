@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
-    <link rel="stylesheet" href="../static/info_contato.css">
+    <link rel="stylesheet" href="/info_contato.css"> <!-- Certifique-se de que este caminho está correto -->
 </head>
 <body>
     <header class="header-zoom">
@@ -18,53 +18,48 @@
     <!-- Segundo header com barra de pesquisa e navegação -->
     <header class="header">
         <div class="search-bar">
-            <img src="/img/image 25.png" alt="Logo" class="search-bar-img">
+            <img src="/img/image 25.png" alt="Logo do sistema" class="search-bar-img">
             <input type="text" placeholder="Procurar eventos">
             <button>🔍</button>
         </div>
         <nav class="nav">
             <a href="/html/eventos.html">Eventos</a>
-            <a href="/html/criar-evento.html">Criar um evento</a>
-            <a href="/html/info_contato.html">Usuario</a>
+            <a href="/usuario/evento/criar">Criar um evento</a>
+            <a href="/html/info_contato.html">Usuário</a>
         </nav>
     </header>
     
     <div class="main-container">
-        <!-- Apartamento para o aside à esquerda -->
         <aside class="quick-links">
             <ul>
                 <li><a href="/html/info_contato.html">Informações da Conta</a></li>
-                <li><a href="/">Eventos Criados</a></li>
+                <a th:href="@{/evento/meus?usuarioId=${usuario.id}}">Eventos Criados</a>
                 <li><a href="/html/eventos-inscritos.html">Eventos Inscritos</a></li>
-
             </ul>
         </aside>
 
         <main class="account-section">
             <h1>Informações da Conta</h1>
             <div class="account-grid">
-                <!-- Foto de Perfil -->
-                <!-- Formulário de Informações -->
                 <div class="contact-info">
                     <h2>Informações do Usuário</h2>
-                    <form id="user-form">
+                    <form id="user-form" action="/path/to/submit" method="POST"> <!-- Ajuste a URL conforme necessário -->
                         <div class="profile-picture">
                             <h2>Foto de Perfil</h2>
-                            <img id="profile-img" src="https://via.placeholder.com/150" alt="Foto de Perfil">
+                            <img id="profile-img" src="https://via.placeholder.com/150" alt="Foto de Perfil do Usuário">
                             <input type="file" id="profile-pic-input" accept="image/*">
                             <button type="button" id="upload-btn">Carregar Foto</button>
                         </div>
-                        <!-- Informações de Contato -->
                         <label for="nome">Nome Completo</label>
                         <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
                         
                         <label for="telefone">Telefone</label>
-                        <input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone">
+                        <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" pattern="\([0-9]{2}\) [0-9]{4}-[0-9]{4}" required>
+                        <small>Formato: (xx) xxxx-xxxx</small>
 
                         <label for="cidade">Cidade</label>
-                        <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade">
+                        <input type="text" id="cidade" name="cidade" placeholder="Digite sua cidade" required>
 
-                        <!-- Informações de Login -->
                         <h3>Dados de Login</h3>
                         <label for="email">E-mail</label>
                         <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
@@ -79,6 +74,7 @@
             <div id="output"></div>
         </main>
     </div>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-image">
@@ -100,6 +96,6 @@
         <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Certifique-se de que o caminho do arquivo está correto -->
 </body>
 </html>
