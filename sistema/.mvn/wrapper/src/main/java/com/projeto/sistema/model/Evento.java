@@ -1,7 +1,8 @@
 package com.projeto.sistema.model;
 
 import jakarta.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;  // Usando LocalDateTime
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,12 +14,12 @@ public class Evento {
 
     private String nome;
     private String local;
-    private String detalhes;  // Novo atributo
-    private String ingresso;  // Novo atributo
-    private String tipoDeEvento;  // Novo atributo
+    private String detalhes;  // Descrição adicional do evento
+    private String ingresso;  // Tipo de ingresso, por exemplo, gratuito ou pago
+    private String tipoDeEvento;  // Exemplo: palestra, workshop, seminário
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date data;
+    @Column(name = "data")
+    private LocalDateTime data;  // Alterado para LocalDateTime
 
     @ManyToMany
     @JoinTable(
@@ -26,12 +27,16 @@ public class Evento {
         joinColumns = @JoinColumn(name = "evento_id"),
         inverseJoinColumns = @JoinColumn(name = "usuario_id")
     )
-    private List<Usuario> listClientes;
+    private List<Usuario> listClientes = new ArrayList<>();
 
-    // Construtores, getters e setters
+    @ManyToOne
+    @JoinColumn(name = "usuario_criador_id")
+    private Usuario usuarioCriador;  // O usuário criador do evento
+
+    // Construtores
     public Evento() {}
 
-    public Evento(String nome, String local, Date data, List<Usuario> listClientes, String detalhes, String ingresso, String tipoDeEvento) {
+    public Evento(String nome, String local, LocalDateTime data, List<Usuario> listClientes, String detalhes, String ingresso, String tipoDeEvento) {
         this.nome = nome;
         this.local = local;
         this.data = data;
@@ -41,6 +46,7 @@ public class Evento {
         this.tipoDeEvento = tipoDeEvento;
     }
 
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -65,11 +71,11 @@ public class Evento {
         this.local = local;
     }
 
-    public Date getData() {
+    public LocalDateTime getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
 
@@ -103,5 +109,18 @@ public class Evento {
 
     public void setTipoDeEvento(String tipoDeEvento) {
         this.tipoDeEvento = tipoDeEvento;
+    }
+
+    public Usuario getUsuarioCriador() {
+        return usuarioCriador;
+    }
+
+    public void setUsuarioCriador(Usuario usuarioCriador) {
+        this.usuarioCriador = usuarioCriador;
+    }
+
+    // Método para adicionar um cliente à lista de inscritos
+    public void addInscrito(Usuario usuario) {
+        this.listClientes.add(usuario);
     }
 }

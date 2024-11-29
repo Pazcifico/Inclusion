@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Criados</title>
+    <link rel="stylesheet" href="/eventoscriado.css"> <!-- Certifique-se de que o caminho está correto -->
+</head>
+<body>
+    <header class="header-zoom">
+        <div class="zoom-controls">
+            <span id="guarambi-title">Guanambi</span>
+            <button id="zoom-in">+</button>
+            <button id="zoom-out">-</button>
+        </div>
+    </header>
+
+    <!-- Segundo header com barra de pesquisa e navegação -->
+    <header class="header">
+        <div class="search-bar">
+            <img src="/logo.png" alt="Logo do sistema" class="search-bar-img">
+            <input type="text" placeholder="Procurar eventos">
+            <button>🔍</button>
+        </div>
+        <nav class="nav">
+            <a href="/html/eventos.html">Eventos</a>
+            <a href="/usuario/evento/criar">Criar um evento</a>
+            <a href="/usuario/perfil">Usuário</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <aside class="quick-links">
+            <ul>
+                <li><a href="/evento/meus?usuarioId=${usuario.id}">Eventos Criados</a></li>
+                <li><a href="/evento/inscritos?usuarioId=${usuario.id}">Eventos Inscritos</a></li>
+            </ul>
+        </aside>
+
+        <main class="account-section">
+            <h1>Meus Eventos Criados</h1>
+
+            <!-- Evento 1 -->
+            <div class="event-card">
+                <h2>Seminário de Inclusão</h2>
+                <p><strong>Data e Hora:</strong> 15/12/2024 às 10:00</p>
+                <p><strong>Local:</strong> Auditório Central, Guanambi</p>
+                <p><strong>Detalhes:</strong> Um evento voltado para discutir estratégias de inclusão no mercado de trabalho.</p>
+                <p>
+                    <strong>Ingresso:</strong> 
+                    <span class="badge-pago">Pago</span>
+                </p>
+                <p>
+                    <strong>Tipo de Evento:</strong> 
+                    <span class="badge-pcd">PCD</span>
+                </p>
+                <a href="/usuario/evento/editar/2" class="edit-btn">Editar Evento</a> <!-- Link para edição -->
+            </div>
+
+            <!-- Evento 2 -->
+            <div class="event-card">
+                <h2>Palestra sobre Acessibilidade</h2>
+                <p><strong>Data e Hora:</strong> 20/12/2024 às 14:00</p>
+                <p><strong>Local:</strong> Sala Multimídia, Guanambi</p>
+                <p><strong>Detalhes:</strong> Palestra com especialistas em acessibilidade digital.</p>
+                <p>
+                    <strong>Ingresso:</strong> 
+                    <span class="badge-gratis">Grátis</span>
+                </p>
+                <p>
+                    <strong>Tipo de Evento:</strong> 
+                    <span class="badge-pcd">PCD</span>
+                </p>
+                <a href="/usuario/evento/editar/2" class="edit-btn">Editar Evento</a> <!-- Link para edição -->
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-image">
+                <img src="/logo.png" alt="Imagem do Rodapé" class="footer-img">
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="/html/inicial.html">Menu</a></li>
+                    <li><a href="/html/sobrenos.html">Sobre Nós</a></li>
+                    <li><a href="/html/feedback.html">Avaliar Serviços</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#">🔵</a>
+                <a href="#">🟢</a>
+                <a href="#">🟡</a>
+            </div>
+        </div>
+        <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="/script.js"></script> <!-- Certifique-se de que o caminho está correto -->
+</body>
+</html>

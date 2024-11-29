@@ -1,6 +1,8 @@
+/* Reset básico e fontes modernas */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  background-color: #e0e0e0; /* Fundo claro e neutro */
+  color: #333; /* Cor de texto neutra */
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -8,33 +10,66 @@ body {
 
 /* Header */
 .header-zoom {
-  background-color: #4ca14c;
+  background: linear-gradient(135deg, #00796b, #004d40); /* Gradiente de verde para dar um efeito moderno */
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 20px; /* Menor padding (reduzindo a altura do header) */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-zoom:hover {
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Aumenta o brilho e a sombra no hover */
 }
 
 /* Navegação */
 .nav-bar {
-  background-color: #0B5F76;
+  background: linear-gradient(135deg, #004d40, #003c3c); /* Gradiente mais escuro */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 20px; /* Menor padding para uma barra de navegação mais compacta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
 }
 
 .nav-list {
   display: flex;
-  gap: 15px;
+  gap: 15px; /* Menor espaço entre os itens de navegação */
   list-style: none;
 }
 
 .nav-link {
   text-decoration: none;
+  color: #f0f0f0; /* Cor suave para os links */
+  font-weight: 600;
+  font-size: 12px; /* Tamanho de fonte menor para os links */
+  padding: 5px 8px; /* Menor padding para os links */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff00cc; /* Cor neon para links em hover */
+  text-shadow: 0 0 10px rgba(255, 0, 204, 0.8); /* Efeito neon */
+}
+
+/* Botões de navegação (se houver) */
+.nav-bar button {
+  background: linear-gradient(45deg, #00bcd4, #00796b); /* Gradiente de botão */
   color: white;
-  font-weight: bold;
+  padding: 8px 16px; /* Botões com padding menor */
+  font-size: 12px; /* Fonte menor nos botões */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-bar button:hover {
+  background: linear-gradient(45deg, #004d40, #00bcd4); /* Gradiente invertido no hover */
+  transform: scale(1.02); /* Efeito de aumento no hover */
 }
 
 /* Formulário */
@@ -42,37 +77,128 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  background-color: #A0DED6;
+  padding: 50px;
+  background: radial-gradient(circle, #ffffff, #f1f1f1); /* Gradiente de fundo suave */
 }
 
 form {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
+form:hover {
+  transform: scale(1.02); /* Efeito de zoom sutil no hover */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25); /* Aumento de sombra no hover */
+}
+
+/* Inputs e Botões */
 input, select, textarea {
   display: block;
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  margin: 12px 0;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #00bcd4; /* Azul futurista ao focar nos campos */
+  background-color: #e1f5fe; /* Fundo azul claro no foco */
+  outline: none;
 }
 
 button {
-  background-color: #4CAF50;
+  background: linear-gradient(45deg, #00bcd4, #00796b); /* Gradiente no botão */
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px; /* Reduzindo o tamanho do texto */
+  font-weight: 700;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background: linear-gradient(45deg, #004d40, #00bcd4); /* Gradiente invertido no hover */
+  transform: scale(1.03); /* Efeito de aumento no hover */
+}
+
+/* Botão de contraste */
+button.contraste {
+  background-color: #ff00cc;
+  color: #fff;
+  font-size: 12px; /* Reduzindo o tamanho do texto */
+}
+
+button.contraste:hover {
+  background-color: #ff80c1;
+}
+
+/* Ajustes no layout de texto */
+label {
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Estilos adicionais para footer */
+footer {
+  background-color: #004d40;
+  color: white;
+  text-align: center;
+  padding: 5px 0; /* Reduzindo ainda mais o padding para diminuir o footer */
+  font-size: 12px; /* Diminuindo o tamanho da fonte */
+  border-top: 2px solid #ffffff;
+}
+
+/* Efeitos de animação no footer */
+footer .footer-content p {
+  margin: 0;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Animação de Fade-in para o footer */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header-zoom, .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-bar button {
+    width: 100%; /* Botões ocupando toda a largura em telas menores */
+  }
+
+  main {
+    padding: 30px 15px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 100%;
+  }
 }

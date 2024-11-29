@@ -38,16 +38,20 @@
         <section class="account-section">
             <h1>Eventos Inscritos</h1>
             <div class="event-list">
-                <!-- Loop para exibir eventos -->
-                <div class="event-card">
-                    <h2>Nome do Evento</h2>
-                    <p><strong>Local:</strong> Local do evento</p>
-                    <p><strong>Data:</strong> 26/11/2024</p>
-                    <p><strong>Ingresso:</strong> Código ou status</p>
+                <!-- Iteração para exibir eventos -->
+                <div th:each="evento : ${eventos}" class="event-card">
+                    <h2 th:text="${evento.nome}">Nome do Evento</h2>
+                    <p><strong>Local:</strong> <span th:text="${evento.local}">Local do evento</span></p>
+                    <p><strong>Data:</strong> <span th:text="${#dates.format(evento.data, 'dd/MM/yyyy HH:mm')}">Data</span></p>
+                    <p><strong>Ingresso:</strong> <span th:text="${evento.ingresso}">Ingresso</span></p>
                 </div>
-                <!-- Fim do loop -->
+                <!-- Caso não haja eventos -->
+                <div th:if="${#lists.isEmpty(eventos)}" class="no-events">
+                    <p>Você ainda não está inscrito em nenhum evento.</p>
+                </div>
             </div>
         </section>
+        
     </main>
     <footer class="footer">
         <div class="footer-content">

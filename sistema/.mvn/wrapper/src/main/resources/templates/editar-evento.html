@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Evento</title>
+    <link rel="stylesheet" href="edicao.css">
+</head>
+<body>
+    <header class="header-zoom">
+        <div class="zoom-controls">
+            <span id="guarambi-title">Guanambi</span>
+            <button id="zoom-in">+</button>
+            <button id="zoom-out">-</button>
+        </div>
+    </header>
+
+    <header class="header">
+        <nav class="nav">
+            <a href="/html/eventos.html">Eventos</a>
+            <a href="/usuario/evento/criar">Criar Evento</a>
+            <a href="/usuario/perfil">Usuário</a>
+        </nav>
+    </header>
+
+    <main class="account-section">
+        <h1>Editar Evento</h1>
+        <!-- O método POST foi mantido, pois o formulário está atualizando o evento -->
+        <form action="/evento/editar/{{evento.id}}" method="POST">
+            <label for="nome">Nome do Evento:</label>
+            <input type="text" id="nome" name="nome" value="{{evento.nome}}" required>
+
+            <label for="data">Data e Hora:</label>
+            <input type="datetime-local" id="data" name="data" value="{{evento.data}}" required>
+
+            <label for="local">Local:</label>
+            <input type="text" id="local" name="local" value="{{evento.local}}" required>
+
+            <label for="detalhes">Detalhes:</label>
+            <textarea id="detalhes" name="detalhes" required>{{evento.detalhes}}</textarea>
+
+            <label for="ingresso">Tipo de Ingresso:</label>
+            <select id="ingresso" name="ingresso" required>
+                <option value="pago" {% if evento.ingresso == 'pago' %} selected {% endif %}>Pago</option>
+                <option value="gratis" {% if evento.ingresso == 'gratis' %} selected {% endif %}>Grátis</option>
+            </select>
+
+            <div>
+                <label for="eventTipo">Tipo de Evento:</label>
+                <select id="eventTipo" name="tipoDeEvento" required>
+                    <option value="pcd" {% if evento.tipoDeEvento == 'pcd' %} selected {% endif %}>PCD</option>
+                    <option value="evento1" {% if evento.tipoDeEvento == 'evento1' %} selected {% endif %}>Tipo 1 Deficiência Física</option>
+                    <option value="evento2" {% if evento.tipoDeEvento == 'evento2' %} selected {% endif %}>Tipo 2 Deficiência Auditiva</option>
+                    <option value="evento3" {% if evento.tipoDeEvento == 'evento3' %} selected {% endif %}>Tipo 3 Deficiência Visual</option>
+                    <option value="evento4" {% if evento.tipoDeEvento == 'evento4' %} selected {% endif %}>Tipo 4 Deficiência Intelectual</option>
+                </select>
+            </div>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-image">
+                <img src="/logo.png" alt="Imagem do Rodapé" class="footer-img">
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="/html/inicial.html">Menu</a></li>
+                    <li><a href="/html/sobrenos.html">Sobre Nós</a></li>
+                    <li><a href="/html/feedback.html">Avaliar Serviços</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#">🔵</a>
+                <a href="#">🟢</a>
+                <a href="#">🟡</a>
+            </div>
+        </div>
+        <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
