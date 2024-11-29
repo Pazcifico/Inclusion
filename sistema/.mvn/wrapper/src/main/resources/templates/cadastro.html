@@ -9,17 +9,17 @@
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header>
-        <div class="top-bar">
-            <span>Guanambi, BA</span>
-            <div class="top-options">
-                <span class="acessibilidade">+ | A | -</span>
-                <span class="contraste">Contraste</span>
-                <button class="login-button" onclick="window.location.href='/login';">Login</button>
-            </div>
+    <header class="header">
+        <div class="search-bar">
+            <img src="/img/image 25.png" alt="Logo" class="search-bar-img">
+            <input type="text" placeholder="Procurar eventos">
+            <button>🔍</button>
         </div>
-        
-        
+        <nav class="nav">
+            <a href="/html/eventos.html">Eventos</a>
+            <a href="/html/criar-evento.html">Criar um evento</a>
+            <a href="/html/info_contato.html">Usuario</a>
+        </nav>
     </header>
 
     <!-- Conteúdo principal -->
@@ -56,13 +56,25 @@
     </main>
 
     <!-- Rodapé -->
-    <footer>
-        <img src="imagens/logo-footer.webp" alt="Logo InclusiON" class="footer-logo">
-        <nav class="footer-menu">
-            <a href="#">Sobre nós</a>
-            <a href="#">Avaliar serviços</a>
-        </nav>
-        <p>© 2024 InclusiON | Todos os direitos reservados.</p>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-image">
+                <img src="/logo.png" alt="Imagem do Rodapé" class="footer-img">
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="/html/inicial.html">Menu</a></li>
+                    <li><a href="/html/sobrenos.html">Sobre Nós</a></li>
+                    <li><a href="/html/feedback.html">Avaliar Serviços</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#">🔵</a>
+                <a href="#">🟢</a>
+                <a href="#">🟡</a>
+            </div>
+        </div>
+        <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>

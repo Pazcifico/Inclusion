@@ -45,7 +45,6 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  padding: 20px 30px;
 }
 
 .search-bar {
@@ -65,6 +64,7 @@ button:hover {
   padding: 15px 10px;
   border: none;
   border-radius: 10px;
+
   flex: 1;
 }
 
@@ -79,8 +79,7 @@ button:hover {
 
 .nav {
   display: flex;
-  gap: 20px;
-  align-items: center;
+  gap: 10px;
 }
 
 .nav a {
@@ -92,6 +91,15 @@ button:hover {
 .nav a:hover {
   text-decoration: underline;
 }
+
+/* Seção da imagem com navegação ao lado */
+.image-nav {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 /* Hero Section */
 .hero {
@@ -245,41 +253,20 @@ button:hover {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   .footer-content {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
 
   .footer-nav ul {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-nav li {
-      margin: 10px 0;
+    margin: 10px 0;
   }
 
   .footer-img {
-      margin-bottom: 15px;
-  }
-
-  .hero {
-      padding: 30px 20px;
-  }
-
-  .hero h1 {
-      font-size: 2rem;
-  }
-
-  .hero p {
-      font-size: 1.2rem;
-  }
-
-  .hero .btn-primary {
-      padding: 10px 25px;
-  }
-
-  .service-cards button {
-      padding: 15px;
+    margin-bottom: 15px;
   }
 }
-

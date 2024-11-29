@@ -8,15 +8,26 @@
 </head>
 <body>
     <!-- Cabeçalho -->
-    <header class="header">
-        <div class="top-bar">
-            <span>📍 Guanambi, BA</span>
-            <div class="top-options">
-                <button class="contrast-toggle">Contraste</button>
-                <span class="text-size">+ | A | -</span>
-            </div>
+    <header class="header-zoom">
+        <div class="zoom-controls">
+           <span id="guarambi-title">Guanambi</span>
         </div>
-    </header>
+      </header>
+    
+      <!-- Segundo header com barra de pesquisa e navegação -->
+      <header class="header">
+        <div class="search-bar">
+          <img src="/logo.png" alt="Logo" class="search-bar-img">
+          <input type="text" placeholder="Procurar eventos">
+          <img src="/img/lupa (1).png" alt="Lupa" class="search-icon">
+        </div>
+        <nav class="nav">
+          <a href="/eventos">Eventos</a>
+          <a href="/criar-evento">Criar um evento</a>
+          <a href="/login">Login</a>
+          <a href="/cadastroUsuario">Cadastrar-se</a>
+        </nav>
+      </header>
 
     <!-- Conteúdo principal -->
     <main class="main">
@@ -53,18 +64,23 @@
     <!-- Rodapé -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="social-media">
-                <a href="#">📘</a>
-                <a href="#">📷</a>
-                <a href="#">✉️</a>
-                <a href="#">📞</a>
+            <div class="footer-image">
+                <img src="/logo.png" alt="Imagem do Rodapé" class="footer-img">
             </div>
-            <div class="footer-menu">
-                <a href="#">Sobre nós</a>
-                <a href="#">Avaliar serviços</a>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="/html/inicial.html">Menu</a></li>
+                    <li><a href="/html/sobrenos.html">Sobre Nós</a></li>
+                    <li><a href="/html/feedback.html">Avaliar Serviços</a></li>
+                </ul>
+            </nav>
+            <div class="social-icons">
+                <a href="#">🔵</a>
+                <a href="#">🟢</a>
+                <a href="#">🟡</a>
             </div>
-            <p>© 2024 InclusiON | Todos os direitos reservados.</p>
         </div>
+        <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>

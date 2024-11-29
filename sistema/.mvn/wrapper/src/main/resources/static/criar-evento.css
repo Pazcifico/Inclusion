@@ -9,68 +9,67 @@ body {
 }
 
 /* Header */
-.header-zoom {
-  background: linear-gradient(135deg, #00796b, #004d40); /* Gradiente de verde para dar um efeito moderno */
-  color: white;
-  display: flex;
-  justify-content: space-between;
+.header {
+  background-color: #0B5F76;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  padding: 5px 20px; /* Menor padding (reduzindo a altura do header) */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 1px;
-  transition: all 0.3s ease-in-out;
 }
 
-.header-zoom:hover {
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3); /* Aumenta o brilho e a sombra no hover */
-}
-
-/* Navegação */
-.nav-bar {
-  background: linear-gradient(135deg, #004d40, #003c3c); /* Gradiente mais escuro */
+.search-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 5px 20px; /* Menor padding para uma barra de navegação mais compacta */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 1px;
+  gap: 10px;  /* Espaçamento entre a imagem e a input */
 }
 
-.nav-list {
-  display: flex;
-  gap: 15px; /* Menor espaço entre os itens de navegação */
-  list-style: none;
+.search-bar-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-.nav-link {
-  text-decoration: none;
-  color: #f0f0f0; /* Cor suave para os links */
-  font-weight: 600;
-  font-size: 12px; /* Tamanho de fonte menor para os links */
-  padding: 5px 8px; /* Menor padding para os links */
-  transition: color 0.3s ease;
+.search-bar input {
+  padding: 15px 10px;
+  border: none;
+  border-radius: 10px;
+
+  flex: 1;
 }
 
-.nav-link:hover {
-  color: #ff00cc; /* Cor neon para links em hover */
-  text-shadow: 0 0 10px rgba(255, 0, 204, 0.8); /* Efeito neon */
-}
-
-/* Botões de navegação (se houver) */
-.nav-bar button {
-  background: linear-gradient(45deg, #00bcd4, #00796b); /* Gradiente de botão */
-  color: white;
-  padding: 8px 16px; /* Botões com padding menor */
-  font-size: 12px; /* Fonte menor nos botões */
-  border-radius: 8px;
+.search-bar button {
+  background-color: #1CD4E4;
+  border: none;
+  padding: 5px 10px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
+  margin-left: 5px;
 }
 
-.nav-bar button:hover {
-  background: linear-gradient(45deg, #004d40, #00bcd4); /* Gradiente invertido no hover */
-  transform: scale(1.02); /* Efeito de aumento no hover */
+.nav {
+  display: flex;
+  gap: 10px;
 }
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/* Seção da imagem com navegação ao lado */
+.image-nav {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 /* Formulário */
 main {
@@ -152,53 +151,82 @@ label {
 }
 
 /* Estilos adicionais para footer */
-footer {
-  background-color: #004d40;
-  color: white;
+.footer {
+  background-color: #0B5F76;
+  color: #fff;
   text-align: center;
-  padding: 5px 0; /* Reduzindo ainda mais o padding para diminuir o footer */
-  font-size: 12px; /* Diminuindo o tamanho da fonte */
-  border-top: 2px solid #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Efeitos de animação no footer */
-footer .footer-content p {
+.footer-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-nav li {
   margin: 0;
-  animation: fadeIn 1s ease-out;
 }
 
-/* Animação de Fade-in para o footer */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.footer-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 
-/* Responsividade */
+.footer-nav a:hover {
+  color: #1CD4E4;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  .header-zoom, .nav-bar {
+  .footer-content {
     flex-direction: column;
-    align-items: flex-start;
+    text-align: center;
   }
 
-  .nav-list {
+  .footer-nav ul {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
   }
 
-  .nav-bar button {
-    width: 100%; /* Botões ocupando toda a largura em telas menores */
+  .footer-nav li {
+    margin: 10px 0;
   }
 
-  main {
-    padding: 30px 15px;
-  }
-
-  form {
-    width: 100%;
-    max-width: 100%;
+  .footer-img {
+    margin-bottom: 15px;
   }
 }

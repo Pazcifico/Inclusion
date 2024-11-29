@@ -12,26 +12,91 @@ html, body {
 }
 
 /* Cabeçalho */
-.header {
-    background-color: #007B55;
-    padding: 20px 30px;
-    color: white;
-}
-
-.top-bar {
+.header-zoom {
+    background-color: #4ca14c;
+    color: #fff;
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    font-size: 14px;
-    position: relative; /* Para posicionar outros itens */
-}
-
-.top-options {
-    position: absolute; /* Sai do fluxo do documento para reposicionamento */
-    right: 20px; /* Posiciona os itens de opções no lado direito */
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .zoom-controls {
     display: flex;
-    gap: 15px;
-}
+    gap: 20px;
+    align-items: center;
+  }
+  
+  #guarambi-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #1CD4E4;
+  }
+  
+  /* Segundo header com barra de pesquisa e navegação */
+  .header {
+    background-color: #0B5F76;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Espaçamento entre a imagem e a input */
+  }
+  
+  .search-bar-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  
+  .search-bar input {
+    padding: 15px 10px;
+    border: none;
+    border-radius: 10px;
+
+    flex: 1;
+  }
+  
+  .search-bar button {
+    background-color: #1CD4E4;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 5px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Seção da imagem com navegação ao lado */
+  .image-nav {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 
 /* Conteúdo principal */
@@ -129,26 +194,80 @@ button:hover {
 /* Ajuste para o rodapé */
 .footer {
     background-color: #0B5F76;
-    color: white;
-    padding: 20px;
+    color: #fff;
     text-align: center;
-    margin-top: auto; /* Empurra o rodapé para o final da página */
-}
-
-.footer .social-media {
-    margin-bottom: 15px;
-}
-
-.footer .footer-menu {
-    margin-bottom: 10px;
-}
-
-.footer .footer-menu a {
-    color: white;
-    margin: 0 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  
+  .footer-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-nav li {
+    margin: 0;
+  }
+  
+  .footer-nav a {
     text-decoration: none;
-}
-
-.footer .footer-menu a:hover {
-    text-decoration: underline;
-}
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .footer-nav a:hover {
+    color: #1CD4E4;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-nav li {
+      margin: 10px 0;
+    }
+  
+    .footer-img {
+      margin-bottom: 15px;
+    }
+  }
