@@ -63,8 +63,8 @@ body {
   .search-bar input {
     padding: 15px 10px;
     border: none;
-    border-radius: 10px;
-
+    border-radius: 15px;
+    
     flex: 1;
   }
   
@@ -244,6 +244,26 @@ body {
     color: #fff;
     font-size: 1.5rem;
   }
+
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    display: block;
+  }
+  
+  .social-icons img {
+    width: 30px; 
+    height: 30px;
+    object-fit: contain;
+  }
+  
+  .social-icons img:hover {
+    opacity: 0.8; 
+  }
+  
   
   /* Responsividade para dispositivos móveis */
   @media (max-width: 768px) {
