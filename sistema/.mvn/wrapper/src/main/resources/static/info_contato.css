@@ -110,7 +110,7 @@ button:hover {
 
 aside.quick-links {
   flex: 1;
-  background-color: #5d9cec;
+  background-color: #0B5F76;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -138,7 +138,7 @@ aside ul li a:hover {
 /* Seção principal */
 .account-section {
   flex: 3;
-  background-color: #fff;
+  background-color: #A0DED6;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -275,6 +275,26 @@ aside ul li a:hover {
   color: #fff;
   font-size: 1.5rem;
 }
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: block;
+}
+
+.social-icons img {
+  width: 30px; 
+  height: 30px;
+  object-fit: contain;
+}
+
+.social-icons img:hover {
+  opacity: 0.8; 
+}
+
 
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {

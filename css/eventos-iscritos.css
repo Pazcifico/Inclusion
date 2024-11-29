@@ -108,7 +108,7 @@ a {
 
 aside.quick-links {
   flex: 1;
-  background-color: #5d9cec;
+  background-color: #0B5F76;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -136,7 +136,7 @@ aside ul li a:hover {
 /* Seção principal */
 .account-section {
   flex: 3;
-  background-color: #fff;
+  background-color: #A0DED6;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -214,57 +214,105 @@ aside ul li a:hover {
   background-color: #4c69ba;
 }
 
-/* Rodapé */
 .footer {
-  background-color: #3b5998;
+  background-color: #0B5F76;
   color: #fff;
   text-align: center;
   padding: 20px;
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.footer-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
 .footer-nav ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-nav li {
+  margin: 0;
 }
 
 .footer-nav a {
+  text-decoration: none;
   color: #fff;
   font-weight: bold;
 }
 
 .footer-nav a:hover {
-  color: #4c69ba;
+  color: #1CD4E4;
 }
 
-/* Responsividade */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: block;
+}
+
+.social-icons img {
+  width: 30px; 
+  height: 30px;
+  object-fit: contain;
+}
+
+.social-icons img:hover {
+  opacity: 0.8; 
+}
+
+
+/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-  .main-container {
-      flex-direction: column;
-      gap: 20px;
-  }
-
   .footer-content {
-      flex-direction: column;
-      gap: 20px;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .search-bar {
-      flex-direction: column;
-      gap: 15px;
+  .footer-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-nav li {
+    margin: 10px 0;
+  }
+
+  .footer-img {
+    margin-bottom: 15px;
   }
 }
-
-
 
 
 

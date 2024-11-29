@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>InclusiOn - Solução para Eventos</title>
-  <link rel="stylesheet" href="/inicial.css">
+  <link rel="stylesheet" href="/css/tela-inicial-administrador.css">
 </head>
 <body>
     <header class="header-zoom">
@@ -14,19 +14,22 @@
       </header>
     
       <!-- Segundo header com barra de pesquisa e navegação -->
-      <header class="header">
-        <div class="search-bar">
-          <img src="/logo.png" alt="Logo" class="search-bar-img">
-          <input type="text" placeholder="Procurar eventos">
-          <img src="/img/lupa (1).png" alt="Lupa" class="search-icon">
-        </div>
-        <nav class="nav">
-          <a href="/eventos">Eventos</a>
-          <a href="/criar-evento">Criar um evento</a>
-          <a href="/login">Login</a>
-          <a href="/cadastroUsuario">Cadastrar-se</a>
-        </nav>
-      </header>
+  <header class="header">
+    <div class="search-bar">
+      <img src="/img/image 25.png" alt="Logo" class="search-bar-img">
+      <input type="text" placeholder="Procurar eventos">
+      <button>
+        <img src="/img/lupa (1).png" alt="Lupa" class="search-icon">
+      </button>
+    </div>
+    <nav class="nav">
+      <a href="/eventos">Eventos</a>
+      <a href="/criar-evento">Criar um evento</a>
+      <a href="/login">Login</a>
+      <a href="/cadastr">Cadastre-se</a>
+    </nav>
+  </header>
+
 
   <section class="content">
     <div class="hero">
@@ -38,32 +41,50 @@
     <div class="services">
       <h2>Realizamos o Melhor para Eventos com Impacto Social</h2>
       <div class="service-cards">
-        <button> 
+        <div class="service-card">
+          <a href="/evento1.html">
+            <img src="/img/evento1.jpg" alt="Imagem do Evento">
             <p>Mundo sem Barreiras</p>
             <p>Monte Alto-BA</p>
-        </button>
-        <button>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="/evento2.html">
+            <img src="/img/evento2.jpg" alt="Imagem do Evento">
             <p>Inclusão em Foco</p>
             <p>Candiba-BA</p>
-        </button>
-        <button>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="/evento3.html">
+            <img src="/img/evento3.jpg" alt="Imagem do Evento">
             <p>Acessibilidade em Ação</p>
             <p>Pilões-BA</p>
-        </button>
-        <button>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="/evento4.html">
+            <img src="/img/evento4.jpg" alt="Imagem do Evento">
             <p>Incluir para Transformar</p>
             <p>Guanambi-BA</p>
-        </button>
+          </a>
+        </div>
       </div>
-      <a href="/eventos.html"<button class="btn-secondary">Ver Todos os Eventos</button></a>
     </div>
-  </section>
+    
+
+    <!-- Botão centralizado -->
+    <div class="button-container">
+      <a href="/eventos.html"><button class="btn-secondary">Ver Todos os Eventos</button></a>
+    </div>
+</section>
+
 
   <!-- Rodapé com imagem e navegação -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-image">
-        <img src="/logo.png" alt="Imagem do Rodapé" class="footer-img">
+        <img src="/img/image 25.png" alt="Imagem do Rodapé" class="footer-img">
       </div>
       <nav class="footer-nav">
         <ul>
@@ -73,9 +94,21 @@
         </ul>
       </nav>
       <div class="social-icons">
-        <a href="#">🔵</a>
-        <a href="#">🟢</a>
-        <a href="#">🟡</a>
+        <a href="https://www.facebook.com/suaempresa" target="_blank">
+          <img src="/img/facebook.png" alt="facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com/suaempresa" target="_blank">
+          <img src="/img/instagram.png" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://www.email.com/suaempresa" target="_blank">
+          <img src="/img/o-email.png" alt="Email" class="social-icon">
+        </a>
+        <a href="https://www.telefone.com/suaempresa" target="_blank">
+          <img src="/img/telefone.png" alt="Telefone" class="social-icon">
+        </a>
+        <a href="https://www.whatsapp.com/suaempresa" target="_blank">
+          <img src="/img/whatsapp.png" alt="whatsapp" class="social-icon">
+        </a>
       </div>
     </div>
     <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
