@@ -1,10 +1,12 @@
 package com.projeto.sistema.controller;
 
 import com.projeto.sistema.model.Evento;
+import com.projeto.sistema.model.Usuario;
 import com.projeto.sistema.repository.EventoRepository;
+import com.projeto.sistema.repository.UsuarioRepository;  // Adicione essa linha
 import com.projeto.sistema.service.EventoService;
 
-import java.util.List;  // Importação correta
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,9 @@ public class EventoController {
 
     @Autowired
     private EventoRepository eventoRepository;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;  // Adicione a injeção do UsuarioRepository
 
     // Tela para criar um novo evento
     @GetMapping("/criar")
@@ -55,14 +60,16 @@ public class EventoController {
         // Garantindo que o id do usuário seja passado corretamente na URL
         return "redirect:/evento/meus?usuarioId=" + eventoAtualizado.getUsuarioCriador().getId();
     }
-    
 
-    // Exibir eventos criados pelo usuário
     @GetMapping("/meus")
     public String listarEventosCriados(@RequestParam("usuarioId") Long usuarioId, Model model) {
         List<Evento> eventos = eventoService.buscarEventosCriados(usuarioId);
-        model.addAttribute("eventosCriados", eventos);
-        return "eventos-criados"; // A view será renderizada com a lista de eventos
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        model.addAttribute("eventosCriados", eventos);  // Passa os eventos para o template
+        model.addAttribute("usuario", usuario);        // Passa o usuário para o template
+        return "eventos-criados"; // Página de eventos criados
     }
 
     // Exibir eventos nos quais o usuário está inscrito

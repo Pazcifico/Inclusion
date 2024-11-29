@@ -56,10 +56,9 @@ public class EventoService {
 
     // Buscar eventos criados por um usuário
     public List<Evento> buscarEventosCriados(Long usuarioId) {
-        Usuario usuario = usuarioRepository.findById(usuarioId)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-        return usuario.getEventosCriados();
+        return eventoRepository.findByUsuarioCriadorId(usuarioId);
     }
+
 
     // Buscar eventos inscritos pelo usuário
     public List<Evento> buscarEventosInscritos(Long usuarioId) {

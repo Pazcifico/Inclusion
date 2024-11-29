@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Perfil</title>
+    <title>Editar Evento</title>
     <link rel="stylesheet" href="/info_contato.css"> <!-- Certifique-se de que este caminho está correto -->
 </head>
 <body>
@@ -18,23 +18,24 @@
     <!-- Segundo header com barra de pesquisa e navegação -->
     <header class="header">
         <div class="search-bar">
-            <img src="/img/image 25.png" alt="Logo do sistema" class="search-bar-img">
+            <img src="/logo.png" alt="Logo do sistema" class="search-bar-img">
             <input type="text" placeholder="Procurar eventos">
             <button>🔍</button>
         </div>
         <nav class="nav">
             <a href="/html/eventos.html">Eventos</a>
             <a href="/usuario/evento/criar">Criar um evento</a>
-            <a href="/html/info_contato.html">Usuário</a>
+            <a href="/usuario/perfil">Usuário</a>
         </nav>
     </header>
     
     <div class="main-container">
         <aside class="quick-links">
             <ul>
-                <li><a href="/html/info_contato.html">Informações da Conta</a></li>
-                <a th:href="@{/evento/meus?usuarioId=${usuario.id}}">Eventos Criados</a>
-                <li><a href="/html/eventos-inscritos.html">Eventos Inscritos</a></li>
+                <!-- Links corrigidos para Thymeleaf -->
+                <li><a th:href="@{/html/info_contato.html}">Informações da Conta</a></li>
+                <a th:href="@{/evento/meus(usuarioId=${usuario.id})}">Eventos Criados</a>
+                <li><a th:href="@{/evento/inscritos?usuarioId=${usuario.id}}">Eventos Inscritos</a></li>
             </ul>
         </aside>
 
@@ -78,12 +79,12 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-image">
-                <img src="/img/image 25.png" alt="Imagem do Rodapé" class="footer-img">
+                <img src="/logo.png" alt="Imagem do Rodapé" class="footer-img">
             </div>
             <nav class="footer-nav">
                 <ul>
                     <li><a href="/html/inicial.html">Menu</a></li>
-                    <li><a href="/html/sobrenós.html">Sobre Nós</a></li>
+                    <li><a href="/html/sobrenos.html">Sobre Nós</a></li> <!-- Corrigido o nome para manter o padrão -->
                     <li><a href="/html/feedback.html">Avaliar Serviços</a></li>
                 </ul>
             </nav>
@@ -96,6 +97,6 @@
         <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script> <!-- Certifique-se de que o caminho do arquivo está correto -->
+    <script src="/script.js"></script> <!-- Certifique-se de que o caminho do arquivo está correto -->
 </body>
 </html>
