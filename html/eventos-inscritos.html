@@ -7,15 +7,6 @@
     <link rel="stylesheet" href="/css/eventos-iscritos.css">
 </head>
 <body>
-    <header class="header-zoom">
-        <div class="zoom-controls">
-            <span id="guarambi-title">Guanambi</span>
-            <button id="zoom-in">+</button>
-            <button id="zoom-out">-</button>
-        </div>
-    </header>
-    
-    <!-- Segundo header com barra de pesquisa e navegação -->
     <header class="header">
         <div class="search-bar">
             <img src="/img/image 25.png" alt="Logo" class="search-bar-img">
@@ -25,78 +16,31 @@
         <nav class="nav">
             <a href="/html/eventos.html">Eventos</a>
             <a href="/html/criar-evento.html">Criar um evento</a>
-            <a href="/html/info_contato.html">Usuário</a>
+            <a href="/html/info_contato.html">Usuario</a>
         </nav>
     </header>
-    
-    <div class="main-container">
+
+    <main class="main-container">
         <aside class="quick-links">
             <ul>
                 <li><a href="/html/info_contato.html">Informações da Conta</a></li>
-                <li><a href="/html/sobrenos.html">Eventos Criados</a></li>
-                <li><a href="/html/feedback.html">Eventos Inscritos</a></li>
+                <li><a href="/html/eventos-criados.html">Eventos Criados</a></li>
+                <li><a href="/html/eventos-inscritos.html" class="active">Eventos Inscritos</a></li>
             </ul>
         </aside>
-
-        <main>
-            <h1>Feedback sobre eventos</h1>
-            <div class="top-center">
-                <div class="feedback-card">
-                    <img src="/img/image25.png" alt="Imagem evento" class="event-image">
-                    <div class="content">
-                        <h3>Título do evento</h3>
-                        
-                        <!-- Mensagem -->
-                        <label for="feedback-message">Mensagem:</label>
-                        <textarea id="feedback-message" name="feedback-message" placeholder="Escreva aqui sua mensagem..." required></textarea>
-                        
-                        <!-- Classificação por estrelas -->
-                        <form class="rating-form">
-                            <label for="rating">Classificar:</label>
-                            <div class="stars">
-                                <input type="radio" id="star5" name="rating" value="5">
-                                <label for="star5" class="fas fa-star"></label>
-        
-                                <input type="radio" id="star4" name="rating" value="4">
-                                <label for="star4" class="fas fa-star"></label>
-        
-                                <input type="radio" id="star3" name="rating" value="3">
-                                <label for="star3" class="fas fa-star"></label>
-        
-                                <input type="radio" id="star2" name="rating" value="2">
-                                <label for="star2" class="fas fa-star"></label>
-        
-                                <input type="radio" id="star1" name="rating" value="1">
-                                <label for="star1" class="fas fa-star"></label>
-                            </div>
-                        </form>
-                    </div>
+        <section class="account-section">
+            <h1>Eventos Inscritos</h1>
+            <div class="event-list">
+                <!-- Loop para exibir eventos -->
+                <div class="event-card">
+                    <h2>Nome do Evento</h2>
+                    <p><strong>Local:</strong> Local do evento</p>
+                    <p><strong>Data:</strong> 26/11/2024</p>
+                    <p><strong>Ingresso:</strong> Código ou status</p>
                 </div>
+                <!-- Fim do loop -->
             </div>
-        </main>
-        
-    </div>
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-image">
-                <img src="/img/image 25.png" alt="Imagem do Rodapé" class="footer-img">
-            </div>
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="/html/inicial.html">Menu</a></li>
-                    <li><a href="/html/sobrenós.html">Sobre Nós</a></li>
-                    <li><a href="/html/feedback.html">Avaliar Serviços</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="#">🔵</a>
-                <a href="#">🟢</a>
-                <a href="#">🟡</a>
-            </div>
-        </div>
-        <p>&copy; 2024 InclusiOn. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+        </section>
+    </main>
 </body>
 </html>
