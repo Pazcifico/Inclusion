@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
   }
   
-  /* Primeiro header (Guanambi + Zoom) */
+  /* Primeiro header*/
   .header-zoom {
     background-color: #4ca14c;
     color: #fff;
@@ -63,18 +63,24 @@ body {
   .search-bar input {
     padding: 15px 10px;
     border: none;
-    border-radius: 10px;
-
+    border-radius: 15px;
+    
     flex: 1;
   }
   
   .search-bar button {
-    background-color: #1CD4E4;
+    background-color: #0B5F76;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 10px;
     margin-left: 5px;
+  }
+  
+  .search-bar button img {
+    width: 20px; 
+    height: 20px;
+    object-fit: contain; 
   }
   
   .nav {
@@ -90,14 +96,6 @@ body {
   
   .nav a:hover {
     text-decoration: underline;
-  }
-  
-  /* Seção da imagem com navegação ao lado */
-  .image-nav {
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
-    align-items: center;
   }
 
 

@@ -8,25 +8,28 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header class="header-zoom">
-        <div class="cidade">
-            <span id="guarambi-title">📍 Guanambi, BA</span>
-        </div>
-    
-    </header>
+  <header class="header-zoom">
+    <div class="zoom-controls">
+       <span id="guarambi-title">Guanambi</span>
+    </div>
+  </header>
 
-    <nav class="nav-bar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo do site" class="imagem-logo">
-        </div>
-        
-        <ul class="nav-list">
-            <li><a href="#" class="nav-link">Eventos</a></li>
-           
-           
-            <li><a href="/usuario/perfil" class="nav-link">Perfil</a></li>
-        </ul>
-    </nav>
+  <!-- Segundo header com barra de pesquisa e navegação -->
+<header class="header">
+<div class="search-bar">
+  <img src="/img/image 25.png" alt="Logo" class="search-bar-img">
+  <input type="text" placeholder="Procurar eventos">
+  <button>
+    <img src="/img/lupa (1).png" alt="Lupa" class="search-icon">
+  </button>
+</div>
+<nav class="nav">
+  <a href="/eventos">Eventos</a>
+  <a href="/criar-evento">Criar um evento</a>
+  <a href="/login">Login</a>
+  <a href="/cadastr">Cadastre-se</a>
+</nav>
+</header>
 
     <main>
         <form id="eventForm" method="POST" action="/usuario/evento/criar">

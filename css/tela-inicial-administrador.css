@@ -5,7 +5,7 @@ body {
     line-height: 1.6;
   }
   
-  /* Primeiro header (Guanambi + Zoom) */
+  /* Primeiro header*/
   .header-zoom {
     background-color: #4ca14c;
     color: #fff;
@@ -98,13 +98,6 @@ body {
     text-decoration: underline;
   }
   
-  /* Seção da imagem com navegação ao lado */
-  .image-nav {
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
-    align-items: center;
-  }
 
   
   /* Hero Section */
