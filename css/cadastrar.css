@@ -54,7 +54,7 @@ button:hover {
 .search-bar {
   display: flex;
   align-items: center;
-  gap: 10px;  /* Espaçamento entre a imagem e a input */
+  gap: 10px; 
 }
 
 .search-bar-img {
